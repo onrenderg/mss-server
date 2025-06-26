@@ -5,6 +5,13 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains
 
+
+
+@app.route("/", methods=["GET"])
+def home():
+    return "<h2>Flask API is running. Visit <code>/products</code> to see the product list.</h2>"
+
+
 # Sample product list
 products = [
     {"id": 1, "name": "T-shirt", "price": 19.99},
